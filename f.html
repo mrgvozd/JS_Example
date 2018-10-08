@@ -1,0 +1,85 @@
+<html>
+<head>
+	<script type="text/javascript" src="game.js"></script>
+	<style>
+		.r_img{
+		    background: url(./r_arr.jpg);
+		}
+		.l_img{
+		    background: url(./l_arr.jpg);
+		}
+		.my_img, .r_img, .l_img, .fgt_btn{
+			background-size: cover;
+			border: none;
+			width: 17px;
+			cursor: pointer;
+		}
+		.txt{
+			border: none;
+			text-align: center;
+			width: 30px;
+			font-size: 20px;
+		}
+		.fgt_btn{
+			background: url(./fight.png);
+			position: relative;
+			top: 400px;
+			width: 310px;
+			height: 78px;
+		}
+		.fgt_log{
+			position: relative;
+			top: 400px;
+			width: 310px;
+			height: 200px;
+		}
+		#player, #enemy{
+			position: relative;
+		}
+	</style>
+</head>
+<body onload="NewGame()">
+	<div style="margin: 0 auto;width: 750;height: 600;"> <!-- style="position:relative;left:30%;top:5%;" -->
+		<div style=" width:100%; height:1px; clear:both;"></div>
+		<div style="float:left;width: 200;height: 600;"> <form name="pstats">
+			<span>Strength:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<input type="button" class="l_img" onclick="ChangeDown(1)">
+			<input name="ptext1" class="txt" style="color:red" readonly>
+			<input type="button" class="r_img" onclick="ChangeUp(1)"/>
+			<br>
+			<span>Dexterity:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<input type="button" class="l_img" onclick="ChangeDown(2)">
+			<input name="ptext2" class="txt" style="color:blue" readonly>
+			<input type="button" class="r_img" onclick="ChangeUp(2)">
+			<br>
+			<span>Health:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<input type="button" class="l_img" onclick="ChangeDown(3)">
+			<input name="ptext3" class="txt" style="color:green" readonly>
+			<input type="button" class="r_img" onclick="ChangeUp(3)">
+			<br><br>
+			<input name="ptext4" class="txt" style="color:magenta; margin-left:15px;" readonly><span> points left</span>
+			<br>
+			<img src="bunny.jpg" id="player">
+		</form></div>
+		<div style="float:left;width: 350;height: 600;"><form name="fight"">
+			<img src="vs.jpg" style="top: 250px;left: 70px;position:relative;">
+			<input type="button" class="fgt_btn" onclick="StartGame()">
+			<br>
+			<textarea name="log" class="fgt_log" readonly></textarea>
+		</form></div>
+		<div style="float:left;width: 200;height: 600;"><form name="estats">
+			<span>Strength:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<input name="etext1" class="txt" style="color:red" readonly>
+			<br>
+			<span>Dexterity:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<input name="etext2" class="txt" style="color:blue" readonly>
+			<br>
+			<span>Health:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<input name="etext3" class="txt" style="color:green" readonly>
+			<br>
+			<img src="xenomorf.jpg" style="margin-top: 110px;" id="enemy">
+		</form></div>
+		<div style=" width:100%; height:1px; clear:both;"></div>
+	</div>
+</body>
+</html>
